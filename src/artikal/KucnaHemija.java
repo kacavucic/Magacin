@@ -2,8 +2,8 @@ package artikal;
 
 import java.util.Date;
 
-public class KucnaHemija extends Artikal{
-	
+public class KucnaHemija extends Artikal {
+
 	private Date rokTrajanja;
 
 	public Date getRokTrajanja() {
@@ -13,6 +13,11 @@ public class KucnaHemija extends Artikal{
 	public void setRokTrajanja(Date rokTrajanja) {
 		this.rokTrajanja = rokTrajanja;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "KucnaHemija [rokTrajanja=" + rokTrajanja + "]";
+	}
 	
-	
+
 }

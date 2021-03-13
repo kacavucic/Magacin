@@ -1,5 +1,7 @@
 package artikal;
 
+import java.util.Objects;
+
 public class Artikal {
 	
 	private String naziv;
@@ -37,6 +39,31 @@ public class Artikal {
 	
 	public void setKolicina(int kolicina) {
 		this.kolicina = kolicina;
+	}
+
+	@Override
+	public String toString() {
+		return "Artikal [naziv=" + naziv + ", sifra=" + sifra + ", opis=" + opis + ", kolicina=" + kolicina + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(sifra);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Artikal)) {
+			return false;
+		}
+		Artikal other = (Artikal) obj;
+		return sifra == other.sifra;
 	}
 	
 	
