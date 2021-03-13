@@ -68,14 +68,25 @@ public class Magacin implements MagacinInterface {
 
 	@Override
 	public void izbaciArtikal(Artikal artikal, int kolicina) {
-		// TODO Auto-generated method stub
+
+		for (Artikal a : artikli) {
+			if (a.equals(artikal)) {
+				int k = a.getKolicina();
+				a.setKolicina(k - kolicina);
+				return;
+			}
+		}
 
 	}
 
 	@Override
 	public Artikal pronadjiArtikal(int sifra) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		for (Artikal a : artikli) {
+			if (a.getSifra() == sifra) {
+				return a;
+			}
+		}
+		throw new RuntimeException("Trazeni artikal ne postoji");
 
+	}
 }
