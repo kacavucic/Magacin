@@ -69,9 +69,16 @@ public class Magacin implements MagacinInterface {
 	@Override
 	public void izbaciArtikal(Artikal artikal, int kolicina) {
 
+		if (artikal == null || kolicina <= 0) {
+			throw new RuntimeException("Ulazni parametri nisu validni");
+		}
+
 		for (Artikal a : artikli) {
 			if (a.equals(artikal)) {
 				int k = a.getKolicina();
+				if (k < kolicina) {
+					throw new RuntimeException("Kolicina na zalihama je manja od zadate");
+				}
 				a.setKolicina(k - kolicina);
 				return;
 			}
