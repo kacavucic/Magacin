@@ -4,8 +4,9 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 import artikal.Artikal;
+import interfejs.MagacinInterface;
 
-public class Magacin {
+public class Magacin implements MagacinInterface{
 
 	private LinkedList<Artikal> artikli;
 
@@ -44,6 +45,24 @@ public class Magacin {
 		}
 		Magacin other = (Magacin) obj;
 		return Objects.equals(artikli, other.artikli);
+	}
+
+	@Override
+	public void dodajArtikal(Artikal artikal, int kolicina) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void izbaciArtikal(Artikal artikal, int kolicina) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Artikal pronadjiArtikal(int sifra) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
