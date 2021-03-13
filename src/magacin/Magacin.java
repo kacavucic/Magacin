@@ -6,7 +6,7 @@ import java.util.Objects;
 import artikal.Artikal;
 import interfejs.MagacinInterface;
 
-public class Magacin implements MagacinInterface{
+public class Magacin implements MagacinInterface {
 
 	private LinkedList<Artikal> artikli;
 
@@ -49,14 +49,27 @@ public class Magacin implements MagacinInterface{
 
 	@Override
 	public void dodajArtikal(Artikal artikal, int kolicina) {
-		// TODO Auto-generated method stub
-		
+
+		if (artikal == null || kolicina <= 0) {
+			throw new RuntimeException("Ulazni parametri nisu validni");
+		}
+
+		for (Artikal a : artikli) {
+			if (a.equals(artikal)) {
+				int k = a.getKolicina();
+				a.setKolicina(k + kolicina);
+				return;
+			}
+		}
+		artikal.setKolicina(kolicina);
+		artikli.add(artikal);
+
 	}
 
 	@Override
 	public void izbaciArtikal(Artikal artikal, int kolicina) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
