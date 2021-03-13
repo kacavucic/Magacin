@@ -6,7 +6,7 @@ import java.util.Objects;
 import artikal.Artikal;
 
 public class Magacin {
-	
+
 	private LinkedList<Artikal> artikli;
 
 	public LinkedList<Artikal> getArtikli() {
@@ -14,7 +14,11 @@ public class Magacin {
 	}
 
 	public void setArtikli(LinkedList<Artikal> artikli) {
-		this.artikli = artikli;
+		if (artikli == null) {
+			throw new NullPointerException("Artikli ne smeju biti null!");
+		} else {
+			this.artikli = artikli;
+		}
 	}
 
 	@Override
@@ -41,7 +45,5 @@ public class Magacin {
 		Magacin other = (Magacin) obj;
 		return Objects.equals(artikli, other.artikli);
 	}
-	
-	
-	
+
 }
