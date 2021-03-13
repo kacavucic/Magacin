@@ -8,7 +8,7 @@ import interfejs.MagacinInterface;
 
 public class Magacin implements MagacinInterface {
 
-	private LinkedList<Artikal> artikli;
+	private LinkedList<Artikal> artikli = new LinkedList<Artikal>();;
 
 	public LinkedList<Artikal> getArtikli() {
 		return artikli;
